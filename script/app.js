@@ -36,14 +36,6 @@ function startSlideshowOnHover(buttonId, images) {
 // Using Google Photos URLs for each button’s slideshow
 startSlideshowOnHover("btn1", ["Pics/ai1.jpg", "Pics/ai2.jpg", "Pics/ai3.jpg"]);
 
-startSlideshowOnHover("btn2", [
-    "https://photos.google.com/photo/AF1QipPjo8fQcTKwH4PlDXR_By7HORpJqNZ_HkpLDYSa",
-    "https://photos.google.com/photo/AF1QipP9Ve7VFvYFa8t-pyMlaluWcCFCsrwaDwA0Uofh",
-    "https://photos.google.com/photo/AF1QipMoObhSDsQ8AZcRkrFLkAdxYrvS2F-5xevLee5W"
-]);
+startSlideshowOnHover("btn2", ["Pics/vd1.jpg", "Pics/vd2.jpg", "Pics/vd3.jpg"]);
 
-startSlideshowOnHover("btn3", [
-    "https://photos.google.com/photo/AF1QipO1FtvbuhqIxlgmmuaiKiCHe99NnZbZqFxahm1V",
-    "https://photos.google.com/photo/AF1QipPTeGEX330gHODLztstEMEyddjhB2lGMF1m4Eic",
-    "https://photos.google.com/photo/AF1QipO7sHFud_smjZwYcE1-f9_oJw2yRDz_GCHZaZoQ"
-]);
+startSlideshowOnHover("btn3", ["Pics/pdf1.jpg", "Pics/pdf2.jpg", "Pics/pdf3.jpg"]);
