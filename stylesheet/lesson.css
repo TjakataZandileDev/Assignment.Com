@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('/Pics/vd1.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.subject-btn {
+    padding: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: blacK;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.subject-btn:hover {
+    background-color: #0056b3;
+}

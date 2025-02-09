@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor</title>
+    <link rel="stylesheet" href="stylesheet/tutor.css">
+</head>
+<body>
+    <div class="container">
+        <button class="big-button" id="videoBtn">How AI Tutor Works</button>
+        <button class="small-button" onclick="openPerplexity()">AI Tutor</button>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="youtubeVideo" width="560" height="315" 
+                src="https://www.youtube.com/embed/LoCUoYg0XNY?rel=0" 
+                frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script src="script/tutor.js"></script>
+</body>
+</html>

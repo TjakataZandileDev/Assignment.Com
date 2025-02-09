@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accounting Topics</title>
+    <link rel="stylesheet" href="/stylesheet/subjects.css">
+</head>
+<body>
+    <div class="container">
+        <button class="topic-btn" id="doubleEntryBtn">Double Entry</button>
+        <button class="topic-btn" id="trialBalanceBtn">Trial Balance</button>
+        <button class="topic-btn" id="incomeStatementBtn">Income Statement</button>
+        <button class="topic-btn" id="balanceSheetBtn">Balance Sheet</button>
+        <button class="topic-btn" id="cashBookBtn">Cash Book</button>
+        <button class="topic-btn" id="journalsBtn">Journals</button>
+        <button class="topic-btn" id="depreciationBtn">Depreciation</button>
+        <button class="topic-btn" id="badDebtsBtn">Bad Debts</button>
+        <button class="topic-btn" id="bankReconciliationBtn">Bank Reconciliation</button>
+        <button class="topic-btn" id="ratiosBtn">Accounting Ratios</button>
+        <button class="topic-btn" id="partnershipBtn">Partnership Accounts</button>
+        <button class="topic-btn" id="manufacturingBtn">Manufacturing Accounts</button>
+    </div>
+</body>
+
+<script>
+// Function to create and show the modal with the YouTube video
+function showVideoModal(videoUrl) {
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = () => document.body.removeChild(modal);
+
+    modal.appendChild(iframe);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+// Function to initialize button event listeners
+function initializeVideoButtons() {
+    const buttons = [
+        { id: 'doubleEntryBtn', url: 'https://www.youtube.com/embed/MgXhXZU6XgQ' },
+        { id: 'trialBalanceBtn', url: 'https://www.youtube.com/embed/B4m8sV0iPT4' },
+        { id: 'incomeStatementBtn', url: 'https://www.youtube.com/embed/kU3PHu1p8G8' },
+        { id: 'balanceSheetBtn', url: 'https://www.youtube.com/embed/3Z8zNSAIqlA' },
+        { id: 'cashBookBtn', url: 'https://www.youtube.com/embed/j9AeOdWigx8' },
+        { id: 'journalsBtn', url: 'https://www.youtube.com/embed/oGouBoCjXqw' },
+        { id: 'depreciationBtn', url: 'https://www.youtube.com/embed/QTVm-UmaZ5o' },
+        { id: 'badDebtsBtn', url: 'https://www.youtube.com/embed/Ax53JD5eSYE' },
+        { id: 'bankReconciliationBtn', url: 'https://www.youtube.com/embed/uG6bAb_gLvs' },
+        { id: 'ratiosBtn', url: 'https://www.youtube.com/embed/Ji2f4o9SO0w' },
+        { id: 'partnershipBtn', url: 'https://www.youtube.com/embed/dhDoDdE0Pss' },
+        { id: 'manufacturingBtn', url: 'https://www.youtube.com/embed/ksVyLckuU9U' }
+    ];
+
+    buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+            btnElement.addEventListener('click', () => showVideoModal(button.url));
+        }
+    });
+}
+
+// Initialize the buttons when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+</script>
+</html>

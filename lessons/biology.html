@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology </title>
+    <link rel="stylesheet" href="/stylesheet/subjects.css">
+</head>
+<body>
+    <div class="container">
+        <button class="topic-btn" id="cellStructureBtn">Cell Structure</button>
+        <button class="topic-btn" id="enzymesBtn">Enzymes</button>
+        <button class="topic-btn" id="movementBtn">Movement of Substances</button>
+        <button class="topic-btn" id="nutritionBtn">Nutrition</button>
+        <button class="topic-btn" id="respirationBtn">Respiration</button>
+        <button class="topic-btn" id="transportBtn">Transport in Organisms</button>
+        <button class="topic-btn" id="coordinationBtn">Coordination & Response</button>
+        <button class="topic-btn" id="reproductionBtn">Reproduction</button>
+        <button class="topic-btn" id="inheritanceBtn">Inheritance</button>
+        <button class="topic-btn" id="organismsBtn">Organisms & Environment</button>
+        <button class="topic-btn" id="humanInfluenceBtn">Human Influence on Environment</button>
+        <button class="topic-btn" id="biotechnologyBtn">Biotechnology</button>
+    </div>
+</body>
+
+<script>
+function showVideoModal(videoUrl) {
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = () => document.body.removeChild(modal);
+
+    modal.appendChild(iframe);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function initializeVideoButtons() {
+    const buttons = [
+        { id: 'cellStructureBtn', url: 'https://www.youtube.com/embed/URUJD5NEXC8' },
+        { id: 'enzymesBtn', url: 'https://www.youtube.com/embed/2NENlXsW4pM' },
+        { id: 'movementBtn', url: 'https://www.youtube.com/embed/IWcU8bP0qXA' },
+        { id: 'nutritionBtn', url: 'https://www.youtube.com/embed/POXU1b7Wb3Q' },
+        { id: 'respirationBtn', url: 'https://www.youtube.com/embed/4D3NwCMnF5Q' },
+        { id: 'transportBtn', url: 'https://www.youtube.com/embed/Z_L6q3hW_8E' },
+        { id: 'coordinationBtn', url: 'https://www.youtube.com/embed/0fSQeX5Ov8s' },
+        { id: 'reproductionBtn', url: 'https://www.youtube.com/embed/RHIIvVhqiUY' },
+        { id: 'inheritanceBtn', url: 'https://www.youtube.com/embed/Mehz7tCxjSE' },
+        { id: 'organismsBtn', url: 'https://www.youtube.com/embed/jWXpd-tbo6A' },
+        { id: 'humanInfluenceBtn', url: 'https://www.youtube.com/embed/Zk2nHftuADo' },
+        { id: 'biotechnologyBtn', url: 'https://www.youtube.com/embed/2A7mV82hTTw' }
+    ];
+
+    buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+            btnElement.addEventListener('click', () => showVideoModal(button.url));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+</script>
+</html>
+

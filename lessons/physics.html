@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics</title>
+    <link rel="stylesheet" href="/stylesheet/subjects.css">
+</head>
+<body>
+    <div class="container">
+        <button class="topic-btn" id="motionBtn">Motion</button>
+        <button class="topic-btn" id="forcesBtn">Forces</button>
+        <button class="topic-btn" id="energyBtn">Energy</button>
+        <button class="topic-btn" id="thermalBtn">Thermal Physics</button>
+        <button class="topic-btn" id="wavesBtn">Waves</button>
+        <button class="topic-btn" id="electricityBtn">Electricity</button>
+        <button class="topic-btn" id="magnetismBtn">Magnetism</button>
+        <button class="topic-btn" id="radioactivityBtn">Radioactivity</button>
+        <button class="topic-btn" id="astronomyBtn">Astronomy</button>
+        <button class="topic-btn" id="forcesMotionBtn">Forces & Motion</button>
+        <button class="topic-btn" id="electronicsBtn">Electronics</button>
+        <button class="topic-btn" id="nuclearPhysicsBtn">Nuclear Physics</button>
+    </div>
+</body>
+
+<script>
+function showVideoModal(videoUrl) {
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = () => document.body.removeChild(modal);
+
+    modal.appendChild(iframe);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function initializeVideoButtons() {
+    const buttons = [
+        { id: 'motionBtn', url: 'https://www.youtube.com/embed/ZRrPZtO9Quk' },
+        { id: 'forcesBtn', url: 'https://www.youtube.com/embed/JViu2uV46Ko' },
+        { id: 'energyBtn', url: 'https://www.youtube.com/embed/INwB0L9aT8M' },
+        { id: 'thermalBtn', url: 'https://www.youtube.com/embed/tuSC0YBVH5w' },
+        { id: 'wavesBtn', url: 'https://www.youtube.com/embed/aaWlX3C6_nY' },
+        { id: 'electricityBtn', url: 'https://www.youtube.com/embed/XCHUq7AAqfM' },
+        { id: 'magnetismBtn', url: 'https://www.youtube.com/embed/9n3zCM6kxGg' },
+        { id: 'radioactivityBtn', url: 'https://www.youtube.com/embed/3Efq-aNBkvc' },
+        { id: 'astronomyBtn', url: 'https://www.youtube.com/embed/iy6l3Btyexk' },
+        { id: 'forcesMotionBtn', url: 'https://www.youtube.com/embed/QfkZQ9UuF0I' },
+        { id: 'electronicsBtn', url: 'https://www.youtube.com/embed/J-ynF8lHzgY' },
+        { id: 'nuclearPhysicsBtn', url: 'https://www.youtube.com/embed/QpM1nzT2pDQ' }
+    ];
+
+    buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+            btnElement.addEventListener('click', () => showVideoModal(button.url));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+</script>
+</html>

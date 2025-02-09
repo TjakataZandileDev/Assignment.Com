@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economics</title>
+  <link rel="stylesheet" href="/stylesheet/subjects.css">
+</head>
+<body>
+  <div class="container">
+    <button class="topic-btn" id="basicProblemBtn">Basic Economic Problem</button>
+    <button class="topic-btn" id="economicSystemsBtn">Economic Systems</button>
+    <button class="topic-btn" id="demandSupplyBtn">Demand & Supply</button>
+    <button class="topic-btn" id="equilibriumElasticityBtn">Market Equilibrium & Elasticity</button>
+    <button class="topic-btn" id="govInterventionBtn">Government Intervention</button>
+    <button class="topic-btn" id="marketStructuresBtn">Market Structures</button>
+    <button class="topic-btn" id="microDecisionsBtn">Microeconomic Decision Making</button>
+    <button class="topic-btn" id="macroPerformanceBtn">Macroeconomic Performance</button>
+    <button class="topic-btn" id="fiscalPolicyBtn">Fiscal Policy</button>
+    <button class="topic-btn" id="monetaryPolicyBtn">Monetary Policy</button>
+    <button class="topic-btn" id="internationalTradeBtn">International Trade</button>
+    <button class="topic-btn" id="globalisationDevelopmentBtn">Globalisation & Development</button>
+  </div>
+
+  <script>
+    function showVideoModal(videoUrl) {
+      const modal = document.createElement('div');
+      modal.classList.add('video-modal');
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+      iframe.allow = 'autoplay; encrypted-media';
+      iframe.allowFullscreen = true;
+
+      const closeButton = document.createElement('button');
+      closeButton.classList.add('close-button');
+      closeButton.innerHTML = '&times;';
+      closeButton.onclick = () => document.body.removeChild(modal);
+
+      modal.appendChild(iframe);
+      modal.appendChild(closeButton);
+      document.body.appendChild(modal);
+    }
+
+    function initializeVideoButtons() {
+      const buttons = [
+        { id: 'basicProblemBtn', url: 'https://www.youtube.com/embed/9nLJONdp8Sk' },
+        { id: 'economicSystemsBtn', url: 'https://www.youtube.com/embed/OvYaY6h3eY0' },
+        { id: 'demandSupplyBtn', url: 'https://www.youtube.com/embed/2vR_-S3ew2I' },
+        { id: 'equilibriumElasticityBtn', url: 'https://www.youtube.com/embed/XWnwQ5p6WCU' },
+        { id: 'govInterventionBtn', url: 'https://www.youtube.com/embed/abEnfXvFB3g' },
+        { id: 'marketStructuresBtn', url: 'https://www.youtube.com/embed/JXEC6YmD0rg' },
+        { id: 'microDecisionsBtn', url: 'https://www.youtube.com/embed/29de3STe9RM' },
+        { id: 'macroPerformanceBtn', url: 'https://www.youtube.com/embed/pPqkkQ5-t7w' },
+        { id: 'fiscalPolicyBtn', url: 'https://www.youtube.com/embed/WLl9DlQdOls' },
+        { id: 'monetaryPolicyBtn', url: 'https://www.youtube.com/embed/cJ_DZwPVMs4' },
+        { id: 'internationalTradeBtn', url: 'https://www.youtube.com/embed/5FgB5xPzW-c' },
+        { id: 'globalisationDevelopmentBtn', url: 'https://www.youtube.com/embed/Mu9yZqESM3k' }
+      ];
+
+      buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+          btnElement.addEventListener('click', () => showVideoModal(button.url));
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry</title>
+    <link rel="stylesheet" href="/stylesheet/subjects.css">
+</head>
+<body>
+    <div class="container">
+        <button class="topic-btn" id="statesMatterBtn">States of Matter</button>
+        <button class="topic-btn" id="atomicStructureBtn">Atomic Structure</button>
+        <button class="topic-btn" id="periodicTableBtn">The Periodic Table</button>
+        <button class="topic-btn" id="bondingBtn">Chemical Bonding</button>
+        <button class="topic-btn" id="stoichiometryBtn">Stoichiometry</button>
+        <button class="topic-btn" id="energeticsBtn">Energetics</button>
+        <button class="topic-btn" id="ratesReactionBtn">Rates of Reaction</button>
+        <button class="topic-btn" id="acidsBasesBtn">Acids, Bases & Salts</button>
+        <button class="topic-btn" id="electrochemistryBtn">Electrochemistry</button>
+        <button class="topic-btn" id="metalsBtn">Metals</button>
+        <button class="topic-btn" id="organicChemistryBtn">Organic Chemistry</button>
+        <button class="topic-btn" id="airWaterBtn">Air & Water</button>
+    </div>
+</body>
+
+<script>
+function showVideoModal(videoUrl) {
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = () => document.body.removeChild(modal);
+
+    modal.appendChild(iframe);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function initializeVideoButtons() {
+    const buttons = [
+        { id: 'statesMatterBtn', url: 'https://www.youtube.com/embed/3RzYq0gFZtw' },
+        { id: 'atomicStructureBtn', url: 'https://www.youtube.com/embed/VFkQSGyeCWg' },
+        { id: 'periodicTableBtn', url: 'https://www.youtube.com/embed/0RRVV4Diomg' },
+        { id: 'bondingBtn', url: 'https://www.youtube.com/embed/QqjcCvzWwww' },
+        { id: 'stoichiometryBtn', url: 'https://www.youtube.com/embed/1U8pPbXypKk' },
+        { id: 'energeticsBtn', url: 'https://www.youtube.com/embed/ThpQzIu4n9w' },
+        { id: 'ratesReactionBtn', url: 'https://www.youtube.com/embed/syN3MOkFqYw' },
+        { id: 'acidsBasesBtn', url: 'https://www.youtube.com/embed/SLasYzF4wZg' },
+        { id: 'electrochemistryBtn', url: 'https://www.youtube.com/embed/Fkjr7XT95gU' },
+        { id: 'metalsBtn', url: 'https://www.youtube.com/embed/AnSEtmLdxPM' },
+        { id: 'organicChemistryBtn', url: 'https://www.youtube.com/embed/V1PSJ2QmYHk' },
+        { id: 'airWaterBtn', url: 'https://www.youtube.com/embed/5A4xBp2rizQ' }
+    ];
+
+    buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+            btnElement.addEventListener('click', () => showVideoModal(button.url));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+</script>
+</html>
