@@ -7,7 +7,68 @@
 <html lang="en">
 <head>
     <title>Accounting Topics</title>
-    <link rel="stylesheet" href="/stylesheet/subjects.css">
+         <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background: url('/Pics/vd2.jpg') no-repeat center center/cover;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .topic-btn {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .topic-btn:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .video-modal iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 10px;
+        }
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
