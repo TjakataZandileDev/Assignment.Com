@@ -4,68 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Topics</title>
-       <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            background: url('/Pics/vd2.jpg') no-repeat center center/cover;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            width: 80%;
-            max-width: 1200px;
-        }
-        .topic-btn {
-            padding: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background-color: black;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .topic-btn:hover {
-            transform: scale(1.1);
-            background-color: #0056b3;
-        }
-        .video-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .video-modal iframe {
-            width: 80%;
-            height: 80%;
-            border: none;
-            border-radius: 10px;
-        }
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="/stylesheet/subjects.css">
 </head>
 <body>
     <div class="container">
@@ -84,5 +23,65 @@
     </div>
 </body>
 
-<script src="/script/subject.js"></script>
+
+<script>
+// Function to create and show the modal with the YouTube video
+function showVideoModal(videoUrl) {
+    // Create the modal container
+    const modal = document.createElement('div');
+    modal.classList.add('video-modal');
+
+    // Create the iframe for the YouTube video
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoUrl}?autoplay=1&rel=0`;
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    // Create the close button
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = () => {
+        document.body.removeChild(modal);
+    };
+
+    // Append the iframe and close button to the modal
+    modal.appendChild(iframe);
+    modal.appendChild(closeButton);
+
+    // Append the modal to the body
+    document.body.appendChild(modal);
+}
+
+// Function to initialize button event listeners
+function initializeVideoButtons() {
+    const buttons = [
+        { id: 'algebraBtn', url: 'https://www.youtube.com/embed/tTomwopxKFE' },
+        { id: 'anglesBtn', url: 'https://www.youtube.com/embed/dA94zyaLuhk' },
+        { id: 'equationsBtn', url: 'https://www.youtube.com/embed/ECfPJpVgARM' },
+        { id: 'fractionsBtn', url: 'https://www.youtube.com/embed/5hG8e9jGeaA' },
+        { id: 'functionsBtn', url: 'https://www.youtube.com/embed/0_FlzTVk6ls' },
+        { id: 'indicesBtn', url: 'https://www.youtube.com/embed/lauh7KjEfXk' },
+        { id: 'matrixBtn', url: 'https://www.youtube.com/embed/IoLAWcxxLJc' },
+        { id: 'prismBtn', url: 'https://www.youtube.com/embed/MCoAXKFXXQk' },
+        { id: 'quadraticBtn', url: 'https://www.youtube.com/embed/5ZhNmKb-dqk' },
+        { id: 'setsBtn', url: 'https://www.youtube.com/embed/3ioBM9PMBI0' },
+        { id: 'transfBtn', url: 'https://www.youtube.com/embed/3ioBM9PMBI0' },
+        { id: 'trigoBtn', url: 'https://www.youtube.com/watch?v=g8VCHoSk5_o&list=PL0o_zxa4K1BVCB8iCVCGOES9pEF6byTMT' }
+    ];
+
+    buttons.forEach(button => {
+        const btnElement = document.getElementById(button.id);
+        if (btnElement) {
+            btnElement.addEventListener('click', () => {
+                showVideoModal(button.url);
+            });
+        }
+    });
+}
+
+// Initialize the buttons when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initializeVideoButtons);
+    </script>
+    </html>
 </html>
