@@ -12,7 +12,7 @@ function openPhysicsPage() {
 document.getElementById("sbtn2").addEventListener("click", openPhysicsPage);
 
 function openChemistryPage() {
-    window.location.href = "lessons/Chemistry.html"; // Opens tutor.html in the same tab
+    window.location.href = "lessons/chemistry.html"; // Opens tutor.html in the same tab
 }
 
 // Update the event listener for btn1
