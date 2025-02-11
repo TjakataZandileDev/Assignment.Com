@@ -64,20 +64,34 @@ button:hover {
     align-items: center;
 }
 
+/* Adjusted Modal Content */
 .modal-content {
     position: relative;
-    width: 80%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 600px;
     background: white;
     padding: 10px;
     text-align: center;
+    border-radius: 10px;
+    
+    /* Reduce height */
+    height: auto;
+    max-height: 80vh; /* Ensures the modal doesn't exceed 80% of the screen height */
+    overflow: hidden;
 }
 
+/* Video Styling */
+#localVideo {
+    width: 100%;
+    max-height: 60vh; /* Adjusts video to fit inside the modal */
+}
+
+/* Close Button */
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
+    top: 5px;
+    right: 15px;
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
     color: black;
