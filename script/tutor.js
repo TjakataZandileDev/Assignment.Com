@@ -35,3 +35,7 @@ function closeModal() {
     localVideo.pause(); // Pause video when modal closes
     localVideo.currentTime = 0; // Reset video to the start
 }
+
+function openPerplexity() {
+    window.open("https://www.perplexity.ai", "_blank");
+}
