@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     display: flex;
     justify-content: center;
@@ -8,25 +9,58 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Grid Layout */
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-adjusts based on screen */
+    gap: 20px;
+    width: 90%; /* Ensures it doesn't exceed the screen width */
+    max-width: 800px; /* Prevents stretching on larger screens */
 }
 
+/* Subject Buttons */
 .subject-btn {
-    padding: 50px;
-    font-size: 18px;
+    padding: 3vw; /* Makes padding responsive */
+    font-size: 1.2rem; /* Scales with screen size */
     font-weight: bold;
     color: white;
-    background-color: blacK;
+    background-color: black;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    min-width: 120px; /* Prevents buttons from shrinking too much */
 }
 
+/* Hover Effect */
 .subject-btn:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 📌 Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusts for smaller screens */
+        gap: 15px;
+    }
+
+    .subject-btn {
+        padding: 4vw;
+        font-size: 1rem;
+    }
+}
+
+/* 📌 Further Adjustments for Mobile Devices */
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for better fit */
+        gap: 10px;
+    }
+
+    .subject-btn {
+        padding: 5vw;
+        font-size: 0.9rem;
+    }
 }
