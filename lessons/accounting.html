@@ -8,66 +8,145 @@
 <head>
     <title>Accounting Topics</title>
          <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            background: url('/Pics/vd2.jpg') no-repeat center center/cover;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            width: 80%;
-            max-width: 1200px;
-        }
-        .topic-btn {
-            padding: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background-color: black;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .topic-btn:hover {
-            transform: scale(1.1);
-            background-color: #0056b3;
-        }
-        .video-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .video-modal iframe {
-            width: 80%;
-            height: 80%;
-            border: none;
-            border-radius: 10px;
-        }
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
+      /* General Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/Pics/vd2.jpg') no-repeat center center/cover;
+    background-size: cover;
+}
+
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusts based on screen size */
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Topic Buttons */
+.topic-btn {
+    padding: 2.5vw; /* Adjusts padding based on screen size */
+    font-size: 1.2rem; /* Scales text dynamically */
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    min-width: 120px; /* Prevents buttons from shrinking too much */
+    text-align: center;
+}
+
+/* Hover Effect */
+.topic-btn:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+/* 📌 Responsive Grid Adjustments */
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .topic-btn {
+        padding: 3vw;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Switches to 2 columns on smaller screens */
+        gap: 10px;
+    }
+
+    .topic-btn {
+        padding: 4vw;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr); /* Single column layout for mobile */
+        gap: 8px;
+    }
+
+    .topic-btn {
+        padding: 5vw;
+        font-size: 0.9rem;
+    }
+}
+
+/* 🎬 Modal Styling */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 10px;
+}
+
+/* 🎥 Video Responsive */
+.video-modal iframe {
+    width: 80%;
+    height: 60vh;
+    max-width: 800px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ❌ Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* 📌 Modal Adjustments for Mobile */
+@media screen and (max-width: 768px) {
+    .video-modal iframe {
+        width: 90%;
+        height: 50vh;
+    }
+
+    .close-button {
+        top: 10px;
+        right: 10px;
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .video-modal iframe {
+        width: 95%;
+        height: 40vh;
+    }
+
+    .close-button {
+        font-size: 1.5rem;
+    }
+
     </style>
 </head>
 <body>
